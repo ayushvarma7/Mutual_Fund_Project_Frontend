@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund Transaction</title>
+
+    <!-- Linking Bootstrap CDN for styling -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <button id="back-btn" class="btn btn-secondary mt-2">Go Back</button>   
+            Mutual Fund Transaction
+        </div>
+        <div class="card-body">
+            <h5 class="card-title" id="mf-name">Mutual Fund Name</h5>
+            <p class="card-text">
+                <strong>Invested Amount:</strong> <span id="invested-amount">XXX</span><br>
+                <strong>Date of Investment:</strong> <span id="investment-date">YYYY-MM-DD</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Include the script to populate data if needed -->
+<!--<script src="script.js"></script>-->
+
+<!-- Optional: Linking Bootstrap JS if you need Bootstrap's JS functionalities -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // ... [rest of the code]
+
+    // Add event listener to the back button
+    document.getElementById("back-btn").addEventListener("click", function() {
+        window.history.back();
+    });
+});
+
+</script>
+</body>
+</html>
