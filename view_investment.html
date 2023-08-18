@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name=""></ion-icon>
+                        </span>
+                        <span class="title">EverGrow</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="investor_dashboard.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="view_allMF.html">
+                        <span class="icon">
+                            <ion-icon name="trending-up-outline"></ion-icon>
+                        </span>
+                        <span class="title">Invest Now</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="view_investment.html">
+                        <span class="icon">
+                            <ion-icon name="trending-down-outline"></ion-icon>
+                        </span>
+                        <span class="title">View Investments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="user.html">
+                        <span class="icon">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <!-- <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div> -->
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- Your main content goes here -->
+            </div>
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>View Investments</h2>
+                        <!-- <a href="#" class="btn">View All</a> -->
+                    </div>
+
+                    <table>
+                        <thead>
+                            <th> MF Name </th>
+                            <th> Invested Amount</th>
+                            <th> Date of Investment</th>
+                            <th>Action</th>
+                            <!-- <tr>
+                                <td>Name</td>
+                                <td>Price</td>
+                                <td>Payment</td>
+                                <td>Status</td>
+                            </tr> -->
+                        </thead>
+                        <tr>
+                            <td>MF 1</td>
+                            <td>$1200</td>
+                            <td>17.08.2023</td>
+                            <td><span class="status return">View</span></td>
+                        </tr>
+                        <tr>
+                            <td>MF 2</td>
+                            <td>$31200</td>
+                            <td>17.08.2023</td>
+                            <td><span class="status return">View</span></td>
+                        </tr>
+                        <tr>
+                            <td>MF 3</td>
+                            <td>$32030</td>
+                            <td>17.08.2023</td>
+                            <td><span class="status return">View</span></td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let hoverableLinks = document.querySelectorAll(".hoverable");
+
+        function highlightLink() {
+            hoverableLinks.forEach((link) => {
+                link.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+
+        hoverableLinks.forEach((link) => {
+            link.addEventListener("mouseover", highlightLink);
+        });
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+body {
+    background-image: url('Downloads/mutual.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f5f5f5;
+    opacity: 0.9; /* Slightly increased opacity for better readability */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    border-radius: 8px; /* Increased border radius */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 400px; /* Adjusted width for a more centered look */
+    text-align: center;
+    animation: fade-in 1s ease-in-out;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333; /* Explicitly set color */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin for spacing */
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px; /* Slightly increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Slightly increased border radius */
+}
+
+.btn-login {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px; /* Slightly increased padding */
+    border: none;
+    border-radius: 5px; /* Slightly increased border radius */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

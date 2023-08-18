@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mutual Fund Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+      width: 400px;
+    }
+
+    .inner-box {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      height: 100px;
+    }
+
+    .stocks-box {
+      margin-top: 10px;
+    }
+
+    .stock-dropdown {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .stock-label {
+      flex: 1;
+    }
+
+    .stock-weightage {
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    input[type="number"] {
+      width: 50px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .stock-list {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    .stock-item {
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stock-name {
+      flex: 1;
+    }
+
+    .edit-weightage {
+      cursor: pointer;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mutual Fund Details</h1>
+
+  <div class="box">
+    <label for="fundName">Mutual Fund Name:</label>
+    <input type="text" id="fundName" placeholder="Enter fund name">
+
+    <label for="currentNAV">Current NAV:</label>
+    <input type="number" id="currentNAV" placeholder="Enter current NAV">
+
+    <label for="expenseRatio">Expense Ratio:</label>
+    <input type="number" id="expenseRatio" placeholder="Enter expense ratio">
+
+    <label for="fundAmount">Fund Amount:</label>
+    <input type="number" id="fundAmount" placeholder="Enter fund amount">
+
+    <div class="inner-box" id="stocksSection">
+      <button id="selectStocksButton">Select Stocks</button>
+      <div class="stocks-box" id="stocksBox"></div>
+    </div>
+
+    <div class="stock-list" id="stockList">
+      <h3>Selected Stocks:</h3>
+      <ul id="stockItemList"></ul>
+    </div>
+
+    <input type="submit" value="Submit">
+  </div>
+
+  <script>
+    const selectStocksButton = document.getElementById('selectStocksButton');
+    const stocksBox = document.getElementById('stocksBox');
+    const stockList = document.getElementById('stockList');
+    const stockItemList = document.getElementById('stockItemList');
+
+    const selectedStocks = [];
+
+    selectStocksButton.addEventListener('click', () => {
+      stocksBox.innerHTML = '';
+
+      const stocks = ['Stock 1', 'Stock 2', 'Stock 3'];
+
+      stocks.forEach(stock => {
+        if (!selectedStocks.find(item => item.stock === stock)) {
+          const stockDropdown = document.createElement('div');
+          stockDropdown.className = 'stock-dropdown';
+
+          const stockCheckbox = document.createElement('input');
+          stockCheckbox.type = 'checkbox';
+          stockCheckbox.value = stock;
+          stockCheckbox.id = stock;
+
+          const stockLabel = document.createElement('label');
+          stockLabel.className = 'stock-label';
+          stockLabel.textContent = stock;
+          stockLabel.setAttribute('for', stock);
+
+          const stockWeightage = document.createElement('input');
+          stockWeightage.type = 'number';
+          stockWeightage.className = 'stock-weightage';
+          stockWeightage.min = 1;
+          stockWeightage.max = 100;
+          stockWeightage.placeholder = 'Weightage';
+
+          stockDropdown.appendChild(stockCheckbox);
+          stockDropdown.appendChild(stockLabel);
+          stockDropdown.appendChild(stockWeightage);
+
+          stocksBox.appendChild(stockDropdown);
+        }
+      });
+    });
+
+    addToStockListButton.addEventListener('click', () => {
+      const stockDropdowns = document.querySelectorAll('.stock-dropdown');
+
+      stockDropdowns.forEach(dropdown => {
+        const stockCheckbox = dropdown.querySelector('input[type="checkbox"]');
+        const stockWeightage = dropdown.querySelector('input[type="number"]');
+        
+        if (stockCheckbox.checked && stockWeightage.value > 0) {
+          const stockName = stockCheckbox.value;
+          const weightage = parseInt(stockWeightage.value);
+
+          selectedStocks.push({ stock: stockName, weightage });
+
+          stockCheckbox.checked = false;
+          stockWeightage.value = '';
+        }
+      });
+
+      updateStockList();
+    });
+
+    function updateStockList() {
+      stockItemList.innerHTML = '';
+      selectedStocks.forEach(stockObj => {
+        const { stock, weightage } = stockObj;
+
+        const listItem = document.createElement('li');
+        listItem.className = 'stock-item';
+        listItem.innerHTML = `
+          <div class="stock-name">${stock}</div>
+          <div class="stock-weightage">${weightage}% <span class="edit-weightage">(Edit)</span></div>
+        `;
+
+        const editWeightageLink = listItem.querySelector('.edit-weightage');
+        editWeightageLink.addEventListener('click', () => {
+          const newWeightage = parseInt(prompt('Enter new weightage:', weightage));
+          if (!isNaN(newWeightage) && newWeightage >= 0 && newWeightage <= 100) {
+            stockObj.weightage = newWeightage;
+            updateStockList();
+          }
+        });
+
+        stockItemList.appendChild(listItem);
+      });
+    }
+  </script>
+</body>
+</html>

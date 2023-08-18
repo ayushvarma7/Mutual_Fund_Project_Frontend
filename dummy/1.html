@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Mutual Fund</title>
+  <link rel="stylesheet" href="portfolio_dashboard.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Create Mutual Fund</h1>
+  
+  <form id="mutualFundForm">
+    <label for="fundName">Mutual Fund Name:</label>
+    <input type="text" id="fundName" name="fundName" required>
+    <br>
+    <br>
+    
+    <label for="stockSelection">Select Stocks:</label>
+    <select id="stockSelection" multiple required>
+      <option value="" disabled selected>Select Stocks</option>
+      <!-- Options will be populated using JavaScript -->
+    </select>
+    
+    <div id="stockWeightages">
+      <!-- Weightage fields will be dynamically added using JavaScript -->
+    </div>
+    
+    <label for="expenseRatio">Expense Ratio:</label>
+    <input type="number" id="expenseRatio" name="expenseRatio" step="0.01" required>
+    <br>
+    
+    <label for="exitLoad">Exit Load:</label>
+    <input type="number" id="exitLoad" name="exitLoad" step="0.01" required>
+    <br>
+    
+    <button type="submit">Create Mutual Fund</button>
+  </form>
+</body>
+</html>
