@@ -18,13 +18,20 @@ loginForm.addEventListener("submit", function(event) {
       headers: {
           "Content-type": "application/json; charset=UTF-8"
       }
-  }).then(response => {
-      if (response.ok) {
-          // Login was successful, handle the response accordingly
-          console.log("Login successful!");
-          setTimeout(function () {
-            window.location.href = "investor_dashboard.html";
-          }, 100);
+  }).then(response => response.json())
+  .then(data => {
+    if (data.status === "success") {
+      // Login was successful, handle the response accordingly
+      
+      console.log("Login successful!");
+      console.log("Investor ID:", data);
+      
+      sessionStorage.setItem("sid",data.investorid) ;
+      
+      setTimeout(function () {
+        window.location.href = "investor_dashboard.html";
+      }, 100);
+
           // You can redirect to a different page or perform other actions here
       } else {
           // Login failed, handle the response accordingly

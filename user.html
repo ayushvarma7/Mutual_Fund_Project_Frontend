@@ -1,51 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="User-style.css">
+    <title>Investor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="user-style.css">
 </head>
+
 <body>
-    <div class="dashboard">
-        <div class="sidebar">
-            <h1>User</h1>
+    <div class="container">
+        <div class="navigation">
             <ul>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name=""></ion-icon>
+                        </span>
+                        <span class="title">EverGrow</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="investor_dashboard.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="view_allMF.html">
+                        <span class="icon">
+                            <ion-icon name="trending-up-outline"></ion-icon>
+                        </span>
+                        <span class="title">Invest Now</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="view_investment.html">
+                        <span class="icon">
+                            <ion-icon name="trending-down-outline"></ion-icon>
+                        </span>
+                        <span class="title">View Investments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="user.html">
+                        <span class="icon">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
             </ul>
         </div>
-        <div class="main-content">
-            <div class="profile">
-                <div class="profile-header">
-                    <ion-icon name="person"></ion-icon>
-                    <h1>User Profile</h1>
-                </div>
-                <div class="profile-box">
-                    <ion-icon class="icon" name="person"></ion-icon>
-                    <div class="details">
-                        <h3>Name</h3>
-                        <p>User Name</p>
-                    </div>
-                </div>
-                <div class="profile-box">
-                    <ion-icon class="icon" name="mail"></ion-icon>
-                    <div class="details">
-                        <h3>Email</h3>
-                        <p>user@example.com</p>
-                    </div>
-                </div>
-                <div class="profile-box">
-                    <ion-icon class="icon" name="call"></ion-icon>
-                    <div class="details">
-                        <h3>Phone Number</h3>
-                        <p>+1234567890</p>
-                    </div>
-                </div>
-                <button class="btn-back">Back</button>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>   
             </div>
+
+            <div class="main-content">
+                <div class="profile">
+                    <div class="profile-header">
+                        <ion-icon name="person"></ion-icon>
+                        <h1>User Profile</h1>
+                    </div>
+                    <div class="profile-box">
+                        <ion-icon class="icon" name="person"></ion-icon>
+                        <div class="details">
+                            <h3>Name</h3>
+                            <p id="user-name">User Name</p>
+                        </div>
+                    </div>
+                    <div class="profile-box">
+                        <ion-icon class="icon" name="mail"></ion-icon>
+                        <div class="details">
+                            <h3>Email</h3>
+                            <p id="user-email">user@example.com</p>
+                        </div>
+                    </div>
+                    <div class="profile-box">
+                        <ion-icon class="icon" name="call"></ion-icon>
+                        <div class="details">
+                            <h3>Phone Number</h3>
+                            <p id="user-phoneno">+1234567890</p>
+                        </div>
+                    </div>
+                    <button class="btn-back">Back</button>
+                </div>
+            
         </div>
     </div>
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="view_user.js"></script>
 </body>
+
 </html>

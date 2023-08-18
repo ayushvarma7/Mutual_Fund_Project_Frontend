@@ -8,7 +8,7 @@ const investmentData = [300000, 450000, 600000, 750000];
 
 // create a stock market chart
 function createStockChart() {
-    const ctx = document.getElementById('stockChart').getContext('2d');
+    // const ctx = document.getElementById('stockChart').getContext('2d');
     new Chart(ctx, {
         type: 'line',
         data: {
