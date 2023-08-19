@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Mutual Fund Investment Form</h1>
+        <h1 class="text-center" id="textHeading">Mutual Fund Investment Form</h1>
         <form action="submit_investment.php" method="POST" class="p-4 border rounded shadow">
             <div class="mb-3">
                 <label for="fund_name" class="form-label">Mutual Fund Name:</label>
@@ -22,9 +22,14 @@
                 <p id="aumInvested" class="form-control-static">Fetching...</p>
             </div>
             <div class="mb-3">
+                <label for="current_nav" class="form-label">Current NAV :</label>
+                <p id="currentNav" class="form-control-static">Fetching...</p>
+            </div>
+            <div class="mb-3">
                 <label for="investment_amount" class="form-label">Investment Amount:</label>
                 <input type="number" id="investment_amount" name="investment_amount" min="1000" step="100" class="form-control" required>
                 <p id="walletBalance" class="form-text text-muted">Available Wallet Balance: $10000</p>
+                <p id="unitsAlloted" class="form-text text-muted">Units allotted: </p>
             </div>
             <div class="mb-3">
                 <label class="form-label">Investment Type:</label>
@@ -67,5 +72,7 @@
             }
         });
     </script>
+
+    <script src="investnow.js"></script>
 </body>
 </html>

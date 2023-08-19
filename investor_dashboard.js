@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", async()=>{
         console.log(investments.length);
         investments.forEach(investment => {
             // console.log(investment.amountInvested);
-            investedAmount= investedAmount + investment.amountInvested;
+            // console.log((investment.transactionType == "BUY" ? investment.amountInvested : -(investment.amountInvested)  ));
+            investedAmount= investedAmount + (investment.transactionType == "BUY" ? investment.amountInvested : -(investment.amountInvested)  ) ;
             
         });
 

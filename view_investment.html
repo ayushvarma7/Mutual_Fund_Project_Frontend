@@ -11,63 +11,7 @@
 
 <body>
     <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name=""></ion-icon>
-                        </span>
-                        <span class="title">EverGrow</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="investor_dashboard.html">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="view_allMF.html">
-                        <span class="icon">
-                            <ion-icon name="trending-up-outline"></ion-icon>
-                        </span>
-                        <span class="title">Invest Now</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="view_investment.html">
-                        <span class="icon">
-                            <ion-icon name="trending-down-outline"></ion-icon>
-                        </span>
-                        <span class="title">View Investments</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="user.html">
-                        <span class="icon">
-                            <ion-icon name="person-circle-outline"></ion-icon>
-                        </span>
-                        <span class="title">Profile</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.html">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div id="sidebar-container"></div>
 
         <div class="main">
             <div class="topbar">
@@ -87,13 +31,12 @@
                 <div class="recentOrders">
                     <div class="cardHeader">
                         <h2>View Investments</h2>
-                        <!-- <a href="#" class="btn">View All</a> -->
                     </div>
-
                     <table>
                         <thead>
                             <th> MF Name </th>
                             <th> Invested Amount</th>
+                            <th> Transaction Type</th>
                             <th> Date of Investment</th>
                             <th>Action</th>
                             <!-- <tr>
@@ -103,24 +46,7 @@
                                 <td>Status</td>
                             </tr> -->
                         </thead>
-                        <!-- <tr>
-                            <td>MF 1</td>
-                            <td>$1200</td>
-                            <td>17.08.2023</td>
-                            <td><span class="status return">View</span></td>
-                        </tr>
-                        <tr>
-                            <td>MF 2</td>
-                            <td>$31200</td>
-                            <td>17.08.2023</td>
-                            <td><span class="status return">View</span></td>
-                        </tr>
-                        <tr>
-                            <td>MF 3</td>
-                            <td>$32030</td>
-                            <td>17.08.2023</td>
-                            <td><span class="status return">View</span></td>
-                        </tr> -->
+                       
                         <tbody id="investments-list">
 
                         </tbody>
@@ -148,6 +74,7 @@
 
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="view_investment.js"></script>
+    <script src="load_components.js"></script>
 </body>
 
 </html>

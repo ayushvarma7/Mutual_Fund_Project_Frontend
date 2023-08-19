@@ -5,29 +5,33 @@ document.addEventListener("DOMContentLoaded", async()=>{
     try{
         const investorId= sessionStorage.getItem("sid");
         const URL=`http://localhost:8188/investments/id/${investorId}`;
-        console.log(URL);
+        // console.log(URL);
         const response= await fetch(URL);
         if(!response.ok){
             throw new Error("Failed to fetch data");
         }
         const data= await response.json();
-        console.log(data[0]);
+        // console.log(data[0]);
 
+        
+        const fundsResponse=  await fetch("http://localhost:8188/mutualfunds/");
+
+        const fundNames= new Map();
+
+        const fundData=await fundsResponse.json();
+        // console.log(fundData);
+
+        fundData.forEach(fund => {
+            fundNames.set(fund.fundId, fund.fundName);
+        });
+
+        // console.log(fundNames);
 
         data.forEach(investment => {
            const row=document.createElement("tr");
             
-        //    const investmentIdCell= document.createElement("td");
-        //    investmentIdCell.textContent=investment.investmentId;
-        //    row.appendChild(investmentIdCell);
-
-        //    const investorIdCell=document.createElement("td");
-        //    investorIdCell.textContent=investment.investorId;
-        //    row.appendChild(investorIdCell);
-
-
            const fundIdCell= document.createElement("td");
-           fundIdCell.textContent=investment.fundId;
+           fundIdCell.textContent= fundNames.get(investment.fundId);
            row.appendChild(fundIdCell);
            
 
@@ -35,16 +39,20 @@ document.addEventListener("DOMContentLoaded", async()=>{
            amountInvestedCell.textContent=investment.amountInvested;
            row.appendChild(amountInvestedCell);
            
+           const transactionTypeCell= document.createElement("td");
+           transactionTypeCell.textContent=investment.transactionType;
+           transactionTypeCell.style.color= (transactionTypeCell.textContent=="BUY" ? "green" :"red" );
+           row.appendChild(transactionTypeCell);
            
            const dateOfInvestmentCell=document.createElement("td");
            dateOfInvestmentCell.textContent=investment.dateOfInvestment;
            row.appendChild(dateOfInvestmentCell);
 
 
-           const btn= document.createElement("a")
-           btn.innerHTML="View";
+           let btn= document.createElement("a")
+           btn.innerText="View";
+           btn.href=`view_transaction.html?id=${investment.investmentId}`;
            btn.className="btn-invest";
-           btn.href="view_transaction.html";
            row.appendChild(btn);
 
            investmentList.appendChild(row);
@@ -53,4 +61,5 @@ document.addEventListener("DOMContentLoaded", async()=>{
     } catch(error){
         console.error("Error fetching data: ", error);
     }
+
 });
