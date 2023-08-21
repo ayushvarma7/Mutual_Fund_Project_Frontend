@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
            
 
            const amountInvestedCell=document.createElement("td");
-           amountInvestedCell.textContent=investment.amountInvested;
+           amountInvestedCell.textContent= `Rs ${investment.amountInvested}`;
            row.appendChild(amountInvestedCell);
            
            const transactionTypeCell= document.createElement("td");
@@ -57,20 +57,20 @@ document.addEventListener("DOMContentLoaded", async()=>{
 
 
            let buy_btn= document.createElement("a")
-           buy_btn.innerText="Buy";
-           buy_btn.href=`view_transaction.html?id=${investment.investmentId}`;
+           buy_btn.innerText="Invest More";
+           buy_btn.href=`investnow.html?id=${investment.fundId}`;
            buy_btn.className="btn-invest";
-           row.appendChild(buy_btn);
+           buy_btn.style.margin="10px";
+        //    buy_btn.style.padding="10px 20px";
 
            let redeem_btn= document.createElement("a")
            redeem_btn.innerText="Redeem";
-           redeem_btn.href=`view_transaction.html?id=${investment.investmentId}`;
+           redeem_btn.href=`redeem_investment.html?id=${investment.investmentId}`;
            redeem_btn.className="btn-invest";
+           redeem_btn.style.margin="10px";
 
 
            transactionTypeCell.textContent=="BUY" ? row.appendChild(redeem_btn) : row.appendChild(buy_btn) ;
-    
-            
 
            investmentList.appendChild(row);
             

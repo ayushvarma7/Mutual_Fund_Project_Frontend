@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p>Expense Ratio: ${fund.expenseRatio} </p>
             <p>Exit Load: ${fund.exitLoad}</p>
             <p>Inception Date: ${date}</p>
-            <a href="investnow.html?id=${fund.fundId}" class="btn-invest">Invest </a>      
+            <a href="investnow.html?id=${fund.fundId}" style="text-decoration:none" class=" btn btn-invest">Invest </a>      
             `;
 
             fundsList && fundsList.appendChild(card);
