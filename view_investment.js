@@ -49,11 +49,28 @@ document.addEventListener("DOMContentLoaded", async()=>{
            row.appendChild(dateOfInvestmentCell);
 
 
-           let btn= document.createElement("a")
-           btn.innerText="View";
-           btn.href=`view_transaction.html?id=${investment.investmentId}`;
-           btn.className="btn-invest";
-           row.appendChild(btn);
+           let view_btn= document.createElement("a")
+           view_btn.innerText="View";
+           view_btn.href=`view_transaction.html?id=${investment.investmentId}`;
+           view_btn.className="btn-invest";
+           row.appendChild(view_btn);
+
+
+           let buy_btn= document.createElement("a")
+           buy_btn.innerText="Buy";
+           buy_btn.href=`view_transaction.html?id=${investment.investmentId}`;
+           buy_btn.className="btn-invest";
+           row.appendChild(buy_btn);
+
+           let redeem_btn= document.createElement("a")
+           redeem_btn.innerText="Redeem";
+           redeem_btn.href=`view_transaction.html?id=${investment.investmentId}`;
+           redeem_btn.className="btn-invest";
+
+
+           transactionTypeCell.textContent=="BUY" ? row.appendChild(redeem_btn) : row.appendChild(buy_btn) ;
+    
+            
 
            investmentList.appendChild(row);
             

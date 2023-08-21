@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Manager Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet">
+    <!-- Chart.js for the graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Portfolio Manager Dashboard</h1>
+    
+    <!-- Summary Section with Cards -->
+    <div class="row mb-4">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Total Investment Amount</h4>
+                    <p class="card-text" id="totalInvestment">$0.00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Total Mutual Funds Managed</h4>
+                    <p class="card-text" id="totalFunds">0</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Total Subscriptions</h4>
+                    <p class="card-text" id="totalSubscriptions">0</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Total Returns</h4>
+                    <p class="card-text" id="totalReturns">$0.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Value over 10 days Graph -->
+    <div class="mb-4">
+        <h3>Investment Value Over 10 Days</h3>
+        <canvas id="investmentChart" width="400" height="150"></canvas>
+    </div>
+
+    <!-- Mutual Fund Investments Table -->
+    <h3 class="mb-3">Your Investments</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Mutual Fund Name</th>
+                <th>Invested Amount</th>
+                <th>Date of Investment</th>
+                <th>Current NAV</th>
+                <th>Total Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="investmentsBody">
+            <!-- Mutual fund investments will be dynamically populated here using JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<!-- MDB JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<!-- Your JavaScript for fetching, displaying data and graph -->
+<script src="sample.js"></script>
+</body>
+
+</html>
