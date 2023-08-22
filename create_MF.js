@@ -294,6 +294,10 @@ createButton.addEventListener('click', async () => {
         console.log(e);
     }
 
+    setTimeout(
+    window.location.href="http://127.0.0.1:5501/view_mutual_fund.html",
+    2000);
+
 });
 
 const stockDataFromDatabase = [];

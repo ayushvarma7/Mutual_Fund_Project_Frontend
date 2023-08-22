@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar-container"></div>
+
+        <div class="main">
+            <div class="topbar">
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+               
+            </div>
+            <div class="main-content">
+                
+                
+                
+                <h3>Redeem Mutual Funds</h3>
+                <div class="mf-list" id="funds-list" style="align-content: center;">
+                   
+        </div>
+    </div>
+
+    <script>
+        let hoverableLinks = document.querySelectorAll(".hoverable");
+
+        function highlightLink() {
+            hoverableLinks.forEach((link) => {
+                link.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+
+        hoverableLinks.forEach((link) => {
+            link.addEventListener("mouseover", highlightLink);
+        });
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="redeem_MF.js"></script>
+    <script src="load_components.js"></script>
+</body>
+
+</html>

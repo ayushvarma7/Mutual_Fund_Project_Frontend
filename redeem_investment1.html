@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Gradient Background */
+        body {
+            background: linear-gradient(45deg, #83a4d4, #b6fbff);
+            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .card {
+            border: none; /* Remove default borders */
+            overflow: hidden; /* For the subtle corner rounding */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better depth */
+        }
+
+        .card-title {
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #008cba; /* Tweaked primary color */
+        }
+
+        .btn-primary:hover {
+            background-color: #006c9a; /* Tweaked primary color for hover */
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Card -->
+            <div class="card">
+
+                <!-- Card Content -->
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Redeem Investment</h4>
+                    
+                    <div class="my-3">
+                        <strong>Mutual Fund Name:</strong>
+                        <span id="fundName"></span>
+                    </div>
+
+                    <div class="my-3">
+                        <strong> Fund Units Redeemable:</strong>
+                        <span id="totalUnits"></span>
+                    </div>
+
+                    <div class="my-3">
+                        <strong> Redeem Units :</strong>
+                       <input type="text" id="redeemUnits"/>
+                    </div>
+                </div>
+
+                <!-- Card Footer -->
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" onclick="goBack()">Back</button>
+                    <button class="btn btn-primary" id="redeem_btn">Redeem</button>
+                </div>
+                
+
+            </div>
+            <!-- End of Card -->
+        </div>
+    </div>
+</div>
+
+<!-- MDB JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<script>
+    // Function to navigate back to the previous page
+    function goBack() {
+        window.history.back();
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="redeem_investment1.js"></script>
+</body>
+
+</html>
