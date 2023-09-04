@@ -32,7 +32,7 @@ async function loadValues() {
 
         
         URL = `http://localhost:8188/investments/getunits/${investorId}/${data.fundId}`;
-        console.log(URL);
+        console.log(URL);   
         response = await fetch(URL);
         redeemableUnits = await response.json();
 

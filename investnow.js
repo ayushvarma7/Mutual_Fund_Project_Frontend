@@ -45,15 +45,18 @@ async function investNow() {
   let investedAmount = document.getElementById("investment_amount");
   // console.log(investedAmount.value, exitLoad.textContent, currentNAV.textContent);
 
-  let amountInvest = parseFloat(investedAmount.value) - parseFloat(expenseRatio);
+  let amountInvest = parseFloat(investedAmount.value) - parseFloat(expenseRatio)*parseFloat(investedAmount.value);
+  amountInvest= ((1-expenseRatio/100)*investedAmount.value);
   let result = amountInvest / currentNAV.textContent;
-  console.log(document.getElementById("balance").textContent, investedAmount.value);
+  // console.log(document.getElementById("balance").textContent, investedAmount.value);
   if(parseFloat(investedAmount.value) > parseFloat(document.getElementById("balance").textContent)){
     alert("Can't invest more than wallet balance!");
     return;
   }
-
-  console.log(result);
+  
+  
+  // console.log("expense ratio: ", expenseRatio, investedAmount.value);
+  // console.log("amount invested would be: ",  ((1-expenseRatio/100)*investedAmount.value)  );
   const postData = {
     investorId: parseInt(investorId),
     fundId: data.fundId,
